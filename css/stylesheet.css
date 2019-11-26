@@ -1,0 +1,933 @@
+@charset "utf-8";
+
+@font-face {
+	src: url(../Fonts/Ubuntu-Regular.ttf) format('truetype'),
+		url(../Fonts/Ubuntu-Regular.woff) format('Woff');
+		
+	font-family: ubuntu;
+}
+
+*{	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+		
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*-------- Für Mobile und Tab--------*/
+/*-------- Für Mobile und Tab--------*/
+/*-------- Für Mobile und Tab--------*/
+
+@media screen and (max-width:768px){
+
+html, body {
+	font-family: ubuntu, Arial, sans-serif;
+	font-size: 14px;
+	background: rgba(215,200,200,1.00);
+}
+
+/*------header ------*/
+
+.flexParentHeader{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	line-height: 50px;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+	
+.flexChildLogo{
+	flex-basis: 90px;
+	order: 1;
+	flex-grow: 1;
+	-webkit-flex-basis: 90px;
+	-webkit-order: 1;
+	-webkit-flex-grow: 1;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.flexChildTitle{
+	flex-basis: 90px;
+	order:2;
+	flex-grow: 1;
+	-webkit-flex-basis: 90px;
+	-webkit-order: 2;
+	-webkit-flex-grow: 1;
+	color:rgba(217,14,39,1.00);
+	font-size: 25px;
+	text-align: center;
+}
+
+.flexChildSocialMedia{
+	flex-basis: 90px;
+	order:3;
+	flex-grow: 1;
+	-webkit-flex-basis: 90px;
+	-webkit-order: 3;
+	-webkit-flex-grow: 1;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.flexChildSocialMedia img{
+	max-width: 30px;
+}
+
+/* ------Navigation ------*/
+
+#topnav{
+	position: fixed;
+	right: -200px;
+	width: 200px;
+	top: 10px;
+	transition: 0.5s;
+	z-index: 100;
+}
+#topnav:target{
+	right: 0;
+}
+	
+#topnav p{
+	position: fixed;
+	right: 0;
+	top: 10px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding-bottom: 2px;
+	background: rgba(178,224,222,1.00);
+	transition: 0.5s 0.5s;
+}
+#topnav:target p{
+	right: -35px;
+}
+#topnav ul {
+	list-style: none;
+	
+}
+#topnav ul li a{
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+	line-height: 30px;
+	text-align: center;
+	display: block;
+	border-bottom: 1px solid black;
+	background: rgba(245,153,155,0.50);
+}
+#topnav ul li ul li a{
+	background: rgba(194,241,245,0.50);
+	line-height: 25px;
+	padding: 2px;
+	text-align: center;
+	display: block;
+	transition: 0.5s;
+}
+#topnav ul li ul li a:hover{
+	background: rgba(245,211,176,0.50);
+}
+
+#topnav ul li ul li a:before{
+	content: "\2013 \00a0";
+}
+
+#topnav:after{
+	content:"";
+	display:block;
+	clear: both;
+}
+
+/*--------Mainbereich --------*/
+main{
+	background:#e8e8e8;
+}
+
+/* ---------Slider ---------*/
+
+.slideshow-container{
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+.prev, .next{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 15px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	transition:0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+/*------für Buttons ----*/
+
+.next{
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover{
+	background-color: rgba(200,191,191,1.00);
+}
+
+/*-------für caption----*/
+.text{
+	color: black;
+	padding: 8px 12px;
+	position:absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	line-height: 25px;
+	background: rgba(219,213,213,0.50);
+}
+
+.dot{
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	padding: 10px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 25% 25%;
+	display: inline-block;
+	transition: background-color 0.6 ease;
+}
+.active, .dot:hover{
+	background-color: #EC9899;
+}
+
+.fade{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+	from {opacity: .4}
+	to {opacity: 1}
+}
+	
+@keyframes fade{
+	from {opacity: .4}
+	to {opacity: 1}
+}
+	
+.prev, .next, .text{
+	font-size: 14px;
+}
+
+/* -----Artikel ------------*/
+
+.flexParentArticle{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	flex: wrap;
+	flex-direction: column;
+	margin-top: 25px;
+}
+
+.flexChildArticleLeft{
+	flex-basis: 50px;
+	flex-grow: 2;
+	-webkit-flex-basis: 50px;
+	-webkit-flex-grow: 2;
+	padding: 5px;
+	text-align: justify;
+}
+.flexChildArticleLeft img{
+	width: 100%;
+	filter: grayscale(1);
+	transition: 0.5s;
+}
+.flexChildArticleLeft img:hover{
+	filter: grayscale(0);
+}
+
+.flexChildArticleMiddle{
+	flex-basis: 50px;
+	flex-grow: 2;
+	-webkit-flex-basis: 50px;
+	-webkit-flex-grow: 2;
+	padding: 5px;
+	text-align: justify;
+}
+	
+.flexChildArticleMiddle img{
+	width: 100%;
+	filter: grayscale(1);
+	transition: 0.5s;
+}
+.flexChildArticleMiddle img:hover{
+	filter: grayscale(0);
+}
+
+.flexChildArticleRight{
+	flex-basis: 50px;
+	flex-grow: 2;
+	-webkit-flex-basis: 50px;
+	-webkit-flex-grow: 2;
+	padding: 5px;
+	text-align: justify;
+}
+.flexChildArticleRight img{
+	width: 100%;
+	filter: grayscale(1);
+	transition: .5s;
+}
+.flexChildArticleRight img:hover{
+	filter: grayscale(0);
+}
+
+
+	
+/*-------Für Footerbereich-------*/
+	
+footer{
+	background: rgba(243,167,168,0.30);
+	padding-top: 20px;
+}
+
+/*-----Formular -----*/
+
+.formularParent{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+	
+label{
+	width: 120px;
+	display: inline-block;
+	text-align: left;
+	padding-left: 2px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+form {
+	max-width: 120px;
+	margin-left: 10px;
+}
+	
+/*-----Formular an der linken Seite -----*/
+	
+.formularMeinung{
+	max-width: 50%;
+	flex-basis: 120px;
+	flex-grow: 6;
+	-webkit-flex-basis: 120px;
+	-webkit-flex-basis: 6;
+}
+	
+.formularMeinung h3{
+	padding-left: 10px;
+}
+	
+.meinungsFrage{
+	margin: 25px 0 10px 0;
+}
+	
+input, textarea{
+	border: none;
+	width: 300px;
+	padding: 10px;
+	outline: none;
+}
+
+input:focus, textarea:focus{
+	background: rgba(179,228,216,1.00);
+}
+	
+input[type="radio"]{
+	width: auto;
+}
+	
+input[type="submit"]{
+	margin-top: 35px;
+	border: 2px solid rgba(134,116,116,1.00);
+	padding: 5px;
+	font-weight: bold;
+}
+	
+.formularMeinung input[type="submit"]:hover{
+	background-color: rgba(133,237,158,1.00);
+}
+
+.top{
+	vertical-align: text-top;
+	padding-top: 15px;
+}
+	
+/*------ Extra Link für download des Formulas-------*/
+.download {
+	margin: 35px 10px 10px;
+}
+	
+/* ------Formular an der Rechten Seite ----*/
+
+.formularAbonnieren{
+	max-width: 50%;
+	flex-basis: 120px;
+	flex-grow: 6;
+	-webkit-flex-basis: 120px;
+	-webkit-flex-grow: 6;
+}
+	
+.formularAbonnieren h3{
+	padding-left: 10px;
+}
+	
+input{
+	border: none;
+	width: 300px;
+	padding: 10px;
+	outline: none;
+}
+input:focus{
+	background: rgba(179,228,216,1.00);
+}
+	
+.formularAbonnieren input[type="submit"]{
+	max-width: auto;
+	margin-top: 10px;
+	border: 2px solid rgba(134,116,116,1.00);
+	padding: 5px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.formularAbonnieren input[type="submit"]:hover{
+	background-color: rgba(133,237,158,1.00);
+}
+	
+.formularAbonnieren input[type="reset"]{
+	max-width: auto;
+	margin-top: 10px;
+	border: 2px solid rgba(134,116,116,1.00);
+	padding: 5px;
+	font-weight: bold;
+	display: inline-block;
+}
+	
+.formularAbonnieren input[type="reset"]:hover{
+	background-color: rgba(133,237,158,1.00);
+}
+
+.footerLinks li{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	flex: wrap;
+	flex-direction: column;
+	-webkit-flex: wrap;
+	-webkit-flex-direction: column;
+	width: 100%;
+	list-style: none;
+	padding-top: 5px;
+}
+	
+.footerLinks li a{
+	color: rgba(18,17,17,1.00);
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	padding: 2px;
+}
+
+.footerLinks li a:hover{
+	color: rgba(243,17,20,1.00);	
+}
+}
+
+@media only screen and (max-width:520px){
+	.prev, .next, .text{
+		font-size: 11px;
+}
+.formularParent{
+	flex: wrap;
+	flex-direction: column;
+	-webkit-flex: wrap;
+	-webkit-flex-direction: column;
+	width: 100%;
+}
+.formularAbonnieren{
+	padding-top: 20px;
+}
+}	
+
+
+
+/*--------- Für Desktop --------*/
+/*--------- Für Desktop --------*/
+/*--------- Für Desktop --------*/
+@media screen and (min-width:769px){
+html, body {
+	font-family: ubuntu, Arial, sans-serif;
+	font-size: 16px;
+}
+
+/*------header ------*/
+	
+.flexParentHeader{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	line-height: 80px;
+}
+.flexChildLogo{
+	flex-basis: 120px;
+	order: 1;
+	flex-grow: 3;
+	-webkit-flex-basis: 120px;
+	-webkit-order:1;
+	-webkit-flex-grow: 3;
+	padding-left: 25px;
+	padding-top: 20px;
+}
+
+.flexChildTitle{
+	flex-basis: 200px;
+	order:2;
+	flex-grow: 6;
+	-webkit-flex-basis: 200px;
+	-webkit-order:2;
+	-webkit-flex-grow: 6;
+	font-size: 35px;
+	text-align: center;
+	color:rgba(217,14,39,1.00);
+}
+
+.flexChildSocialMedia{
+	flex-basis: 120px;
+	order:3;
+	flex-grow: 3;
+	-webkit-flex-basis: 120px;
+	-webkit-order:3;
+	-webkit-flex-grow: 3;
+	padding-left: 150px;
+	padding-top: 20px;
+}
+
+.flexChildSocialMedia img{
+	max-width: 30px;
+}
+
+/* ------Navigation ------*/
+	
+#topnav {
+	position: relative;
+	z-index: 100;
+	
+}
+#topnav p{
+	visibility: hidden;
+}
+#topnav ul{
+	list-style: none;
+}
+#topnav > ul > li{
+	float: left;
+	width: 20%;
+}
+#topnav ul li a{
+	text-decoration: none;
+	background:rgba(241,93,95,1.00);
+	color: black;
+	font-weight: 700;
+	text-align: center;
+	line-height: 40px;
+	display: block;
+	border-left: 1px solid black;
+}
+#topnav ul li:last-of-type{
+	border-right: 1px solid black;
+}
+#topnav ul li ul {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+}
+#topnav ul li:hover ul {
+	opacity: 1;
+	visibility: visible;
+	transition: 1s;
+}
+
+#topnav ul li a:hover {
+	background:rgba(160,231,221,0.50);
+	color:black;
+	transition: 0.5s;
+}
+	
+/* ------für sticky Menubar ---*/
+
+#topnav.sticky{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+#topnav.sticky > ul{
+	max-width: 920px;
+	margin: auto;
+}
+#topnav.sticky + main{
+	margin-top: 40px;
+}
+#topnav:after{
+	content:"";
+	display:block;
+	clear: both;
+}
+
+/*--------Main --------*/
+main{
+	background:#e8e8e8;
+}
+
+/* ---------Slider ---------*/
+
+.slideshow-container{
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+.prev, .next{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 15px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 35px;
+	transition:0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+/*------für Buttons ----*/
+
+.next{
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover{
+	background-color: rgba(200,191,191,1.00);
+}
+
+/*-------für caption der Bilder----*/
+.text{
+	color: black;
+	font-size: 20px;
+	padding: 8px 10px;
+	position:absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	line-height: 20px;
+	background: rgba(219,213,213,0.50);
+}
+
+.dot{
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	padding: 10px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 25% 25%;
+	display: inline-block;
+	transition: background-color 0.6 ease;
+}
+	
+.active, .dot:hover{
+	background-color:#EC9899;
+}
+
+.fade{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
+@keyframes fade{
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
+
+/* -----für Artikelbereich ------------*/
+
+.flexParentArticle{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	margin-top: 25px;
+}
+
+.flexParentArticle img{
+	border-radius: 12%;
+}
+
+.flexChildArticleLeft{
+	flex-basis: 250px;
+	flex-grow: 2;
+	-webkit-flex-basis: 250px;
+	-webkit-flex-basis: 2;
+	padding: 5px;
+	text-align: justify;
+}
+	
+.flexChildArticleLeft img{
+	filter: grayscale(1);
+	transition: 0.5s;
+}
+	
+.flexChildArticleLeft img:hover{
+	filter: grayscale(0);
+}
+
+.flexChildArticleMiddle{
+	flex-basis: 250px;
+	flex-grow: 2;
+	-webkit-flex-basis: 250px;
+	-webkit-flex-basis: 2;
+	padding: 5px;
+	text-align: justify;
+}
+
+.flexChildArticleMiddle img{
+	filter: grayscale(1);
+	transition: 0.5s;
+}
+	
+.flexChildArticleMiddle img:hover{
+	filter: grayscale(0);
+}	
+
+.flexChildArticleRight{
+	flex-basis: 250px;
+	flex-grow: 2;
+	-webkit-flex-basis: 250px;
+	-webkit-flex-basis: 2;
+	padding: 5px;
+	text-align: justify;
+}
+	
+.flexChildArticleRight img{
+	filter: grayscale(1);
+	transition: 0.5s;
+}
+	
+.flexChildArticleRight img:hover{
+	filter: grayscale(0);
+}
+
+/*-------Für Footerbereich-------*/
+	
+footer{
+	background: rgba(243,167,168,0.30);
+	padding-top: 20px;
+}
+
+/*-----Formular -----*/
+
+.formularParent{
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+	
+label{
+	width: 120px;
+	display: inline-block;
+	text-align: left;
+	padding-left: 2px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+form {
+	max-width: 120px;
+	margin-left: 10px;
+}
+	
+/*-----Formular an der linken Seite -----*/
+	
+.formularMeinung{
+	max-width: 50%;
+	flex-basis: 120px;
+	flex-grow: 6;
+	-webkit-flex-basis: 120px;
+	-webkit-flex-basis: 6;
+}
+	
+.formularMeinung h3{
+	padding-left: 10px;
+}
+	
+.meinungsFrage{
+	margin: 25px 0 10px 0;
+}
+	
+input, textarea{
+	border: none;
+	width: 300px;
+	padding: 10px;
+	outline: none;
+}
+
+input:focus, textarea:focus{
+	background: rgba(179,228,216,1.00);
+}
+	
+input[type="radio"]{
+	width: auto;
+}
+	
+input[type="submit"]{
+	margin-top: 35px;
+	border: 2px solid rgba(134,116,116,1.00);
+	padding: 5px;
+	font-weight: bold;
+}
+	
+.formularMeinung input[type="submit"]:hover{
+	background-color: rgba(133,237,158,1.00);
+}
+
+.top{
+	vertical-align: text-top;
+	padding-top: 15px;
+}
+	
+/*------ Extra Link für download des Formulas-------*/
+.download {
+	margin: 35px 10px 10px;
+}
+	
+/* ------Formular an der Rechten Seite ----*/
+
+.formularAbonnieren{
+	max-width: 50%;
+	flex-basis: 120px;
+	flex-grow: 6;
+	-webkit-flex-basis: 120px;
+	-webkit-flex-grow: 6;
+}
+	
+.formularAbonnieren h3{
+	padding-left: 10px;
+}
+	
+input{
+	border: none;
+	width: 300px;
+	padding: 10px;
+	outline: none;
+}
+input:focus{
+	background: rgba(179,228,216,1.00);
+}
+	
+.formularAbonnieren input[type="submit"]{
+	max-width: auto;
+	margin-top: 10px;
+	border: 2px solid rgba(134,116,116,1.00);
+	padding: 5px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.formularAbonnieren input[type="submit"]:hover{
+	background-color: rgba(133,237,158,1.00);
+}
+	
+.formularAbonnieren input[type="reset"]{
+	max-width: auto;
+	margin-top: 10px;
+	border: 2px solid rgba(134,116,116,1.00);
+	padding: 5px;
+	font-weight: bold;
+	display: inline-block;
+}
+	
+.formularAbonnieren input[type="reset"]:hover{
+	background-color: rgba(133,237,158,1.00);
+}
+
+.footerLinks li{
+	float: left;
+	width: 33.333%;
+	line-height: 50px;
+	list-style: none;
+	margin-top: 20px;
+}
+
+.footerLinks li a{
+	color: rgba(18,17,17,1.00);
+	text-decoration: none;
+	font-size: 20px;
+	padding: 5px;
+	display: block;
+	text-align: center;
+	margin: 0 200px;
+}
+	
+.footerLinks li a:hover{
+	color: rgba(243,17,20,1.00);	
+}
+	
+.footerLinks:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+	
+/*-----für Impressumseite ---*/
+
+.impressumHeader{
+	text-align: center;
+	padding-top: 20px;
+}
+	
+.footerImpressum{
+	text-align: center;
+	padding: 20px; 
+}
+
+/*-------für Datenschutzseite ----*/
+
+#datenschutzMain{
+	margin: auto;
+	padding: 0 5px;
+}
+.datenschutzHeader{
+	text-align: center;
+	padding: 10px; 
+}
+}
